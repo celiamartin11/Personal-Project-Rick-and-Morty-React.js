@@ -1,17 +1,19 @@
-import monigota from '../images/monigota.png';
 import '../styles/App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className="title">Rellename!</h1>
-
-      {/* Esto es un comentario */}
-
-      {/* Esto es otro comentario para avisarte que quites la Monigota */}
-      <img src={monigota} alt="Monigota" />
-
-      {/* Aquí va tu código HTML. */}
+    <div className='app'>
+      <header className='header'>
+        <img className='title' src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="Rick and Morty y los creadores"/>
+      </header>
+      <main >
+        <section>
+          <form>
+            <label>Introduce un nombre</label>
+            <input placeholder='Rick'/>
+          </form>
+        </section>
+      </main>
     </div>
   );
 }

@@ -1,5 +1,16 @@
 @import 'core/reset';
 
-/*
-  Aquí puedes poner tu código Sass
-*/
+.app{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
+.title{
+  width: 100vw;
+  height: 40vh;
+  object-fit: contain;
+  background-color: black;
+}
+
+
