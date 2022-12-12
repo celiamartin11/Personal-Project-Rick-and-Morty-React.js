@@ -1,6 +1,17 @@
+import { useEffect, useState } from 'react';
+import getDataFromApi from '../services/api';
+import CharacterList from './CharacterList';
 import '../styles/App.scss';
 
-function App() {
+
+function App() { 
+  const[dataCharacter, setDataCharacter] = useState([])
+  useEffect(()=> {
+    getDataFromApi().then((cleanData) => {
+      setDataCharacter(cleanData);
+    });
+  }, []);
+
   return (
     <div className='app'>
       <header className='header'>
@@ -21,15 +32,7 @@ function App() {
             </select>
           </form>
         </section>
-        <section>
-          <ul className='list_character'>
-            <li className='character'>
-              <h2 className='name'>Rick Sanchez</h2>
-              <p className='name'>Human</p>
-              <img className='image' src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez"/>
-            </li>
-          </ul>
-        </section>
+        <CharacterList characters={dataCharacter}/>
       </main>
     </div>
   );
