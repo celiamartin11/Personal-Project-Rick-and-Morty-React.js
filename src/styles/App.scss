@@ -10,7 +10,37 @@
   width: 100vw;
   height: 40vh;
   object-fit: contain;
-  background-color: black;
 }
 
+.contain{
+  display: flex;
+  justify-content: center;
+}
 
+.filters{
+  width: 42vw;
+  height: 12vh;
+  border: 1px solid #05afc6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter_name{
+  color: white;
+  margin-right: 50px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+}
+
+.label_name{
+  margin-right: 12px;
+}
+
+.input_name{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  border: 1px solid #05afc6;
+  padding: 6px;
+  border-radius: 8px;
+}
