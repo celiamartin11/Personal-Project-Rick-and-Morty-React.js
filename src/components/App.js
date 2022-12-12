@@ -21,6 +21,15 @@ function App() {
             </select>
           </form>
         </section>
+        <section>
+          <ul className='list_character'>
+            <li className='character'>
+              <h2 className='name'>Rick Sanchez</h2>
+              <p className='name'>Human</p>
+              <img className='image' src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez"/>
+            </li>
+          </ul>
+        </section>
       </main>
     </div>
   );

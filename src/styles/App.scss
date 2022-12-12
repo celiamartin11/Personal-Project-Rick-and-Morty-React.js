@@ -1,8 +1,6 @@
 @import 'core/reset';
 
 .app{
-  width: 100vw;
-  height: 100vh;
   background-color: black;
 }
 
@@ -14,7 +12,8 @@
 
 .contain{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .filters{
@@ -43,4 +42,32 @@
   border: 1px solid #05afc6;
   padding: 6px;
   border-radius: 8px;
+}
+
+.list_character{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  
+}
+
+.character{
+  color: white;
+  margin: 50px;
+  padding: 15px;
+  background-color: #05afc6;
+  text-align: center;
+}
+
+.name{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 19px;
+  margin: 8px;
+}
+
+.image{
+  height: 180px;
+  margin: 8px;
 }
