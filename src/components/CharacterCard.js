@@ -1,4 +1,4 @@
-function CharacterItem(props) {
+function CharacterCard(props) {
     return(
         <li className='character'>
             <h2 className='name'>{props.character.name}</h2>
@@ -8,4 +8,4 @@ function CharacterItem(props) {
     );
 };
 
-export default CharacterItem;
+export default CharacterCard;
