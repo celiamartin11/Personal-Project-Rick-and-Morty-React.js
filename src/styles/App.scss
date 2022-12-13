@@ -1,4 +1,4 @@
-@import 'core/reset';
+@import './core/reset';
 
 .app{
   background-color: black;
@@ -17,12 +17,9 @@
 }
 
 .filters{
-  width: 42vw;
+  width: 100vw;
   height: 12vh;
   border: 2px solid #05afc6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0 0 40px #05afc6;
 }
 

@@ -5,7 +5,7 @@ const Filters = (props) => {
     return (
         <>
         <FilterByName handleFilterName={props.handleFilterName} FilterByName={props.FilterByName}/>
-        <FilterBySpecie handleFilterSpecie = {props.handleFilterSpecie}/>
+        <FilterBySpecie handleFilterSpecie = {props.handleFilterSpecie} filterBySpecie={props.filterBySpecie}/>
         </>
     );
 };

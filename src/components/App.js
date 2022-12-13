@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import getDataFromApi from '../services/api';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import { Routes, Route, matchPath, useLocation } from 'react-router-dom';
+import CharacterDetail from './CharacterDetail';
 import '../styles/App.scss';
 
 
@@ -13,6 +15,7 @@ function App() {
   useEffect(()=> {
     getDataFromApi().then((cleanData) => {
       setDataCharacter(cleanData);
+      console.log(cleanData);
     });
   }, []);
 
@@ -29,8 +32,18 @@ function App() {
     return (character.name.toLowerCase().includes(filterByName.toLowerCase()))
   })
   .filter((character) => {
-    return filterBySpecie === 'all' ? true : character.specie === filterBySpecie;
+    return filterBySpecie === 'all' ? true : character.specie.toLowerCase() === filterBySpecie.toLowerCase();
   });
+
+  const { pathname } = useLocation();
+
+  const dataUrl = matchPath("/character/:characterId", pathname);
+
+  const characterId = dataUrl !== null? dataUrl.params.characterId : null;
+  
+  const characterFound = dataCharacter.find((character) => parseInt(character.id) === parseInt(characterId)) 
+
+  
 
   return (
     <div className='app'>
@@ -39,9 +52,18 @@ function App() {
       </header>
       <main className='contain'>
         <section className='filters'>  
-        <Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterSpecie={handleFilterSpecie}/>
-        </section>
-        <CharacterList characters={charactersFiltered}/>
+        <Routes>
+          <Route
+            path='/' element={
+              <>
+                <Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterSpecie={handleFilterSpecie} filterBySpecie={filterBySpecie}/>
+                <CharacterList characters={charactersFiltered}/>
+              </>
+            }
+          />
+          <Route path="/character/:characterId" element={<CharacterDetail character={characterFound}/>}/>
+        </Routes>
+        </section> 
       </main>
     </div>
   );
