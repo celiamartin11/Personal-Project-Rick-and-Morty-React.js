@@ -19,10 +19,11 @@
 .filters{
   width: 42vw;
   height: 12vh;
-  border: 1px solid #05afc6;
+  border: 2px solid #05afc6;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 40px #05afc6;
 }
 
 .filter_name{
@@ -59,6 +60,7 @@
   padding: 15px;
   background-color: #05afc6;
   text-align: center;
+  box-shadow: 0 0 20px #05afc6;
 }
 
 .name{
