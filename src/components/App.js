@@ -6,8 +6,9 @@ import '../styles/App.scss';
 
 
 function App() { 
-  const[dataCharacter, setDataCharacter] = useState([])
-  const [filterBySpecie, setFilterBySpecie] = useState('all')
+  const[dataCharacter, setDataCharacter] = useState([]);
+  const [filterByName, setFilterByName] = useState('');
+  const [filterBySpecie, setFilterBySpecie] = useState('all');
 
   useEffect(()=> {
     getDataFromApi().then((cleanData) => {
@@ -15,11 +16,19 @@ function App() {
     });
   }, []);
 
+  const handleFilterName = (name) => {
+    setFilterByName(name);
+  };
+
   const handleFilterSpecie = (value) => {
     setFilterBySpecie(value);
   };
 
-  const charactersFiltered = dataCharacter.filter((character) => {
+  const charactersFiltered = dataCharacter
+  .filter((character) => {
+    return (character.name.toLowerCase().includes(filterByName.toLowerCase()))
+  })
+  .filter((character) => {
     return filterBySpecie === 'all' ? true : character.specie === filterBySpecie;
   });
 
@@ -29,12 +38,8 @@ function App() {
         <img className='title' src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Rick_and_Morty_title_card_%28cropped%29.png" alt="Rick and Morty y los creadores"/>
       </header>
       <main className='contain'>
-        <section className='filters'>
-          <form className='filter_name'>
-              <label className='label_name'>Introduce un nombre</label>
-              <input className='input_name' placeholder='Rick'/>
-          </form>  
-        <Filters handleFilterSpecie={handleFilterSpecie}/>
+        <section className='filters'>  
+        <Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterSpecie={handleFilterSpecie}/>
         </section>
         <CharacterList characters={charactersFiltered}/>
       </main>

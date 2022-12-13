@@ -7,9 +7,9 @@ const FilterBySpecie = (props)=>{
         <form>
             <select className='input_name' onChange={handleChange}>
               <option>Seleccione una especie</option>
-              <option>Todos</option>
-              <option>Humano</option>
-              <option>Alien</option>
+              <option value='all'>Todos</option>
+              <option value='human'>Humano</option>
+              <option value='alien'>Alien</option>
             </select>
         </form>         
     );
