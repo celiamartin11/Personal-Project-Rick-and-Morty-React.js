@@ -10,8 +10,8 @@ import '../styles/App.scss';
 
 function App() { 
   const[dataCharacter, setDataCharacter] = useState([]);
-  const [filterByName, setFilterByName] = useState('');
-  const [filterBySpecie, setFilterBySpecie] = useState('all');
+  const [filterByName, setFilterByName] = useState(ls.get('filterName', ''));
+  const [filterBySpecie, setFilterBySpecie] = useState(ls.get('filterSpecie', 'all'));
   const [request, setRequest] = useState(false);
 
   useEffect(()=> {
@@ -23,10 +23,12 @@ function App() {
 
   const handleFilterName = (name) => {
     setFilterByName(name);
+    ls.set('filterName', name);
   };
 
   const handleFilterSpecie = (value) => {
     setFilterBySpecie(value);
+    ls.set('filterSpecie', value);
   };
 
   const charactersFiltered = dataCharacter
@@ -58,7 +60,7 @@ function App() {
                   <section className='filters'>
                     <Filters handleFilterName={handleFilterName} filterByName={filterByName} handleFilterSpecie={handleFilterSpecie} filterBySpecie={filterBySpecie}/>
                   </section>   
-                  <CharacterList characters={charactersFiltered}/>           
+                  <CharacterList characters={charactersFiltered}  filterByName={filterByName}/>           
                 </main>
               }
             />

@@ -4,7 +4,7 @@ import FilterBySpecie from './FilterBySpecie';
 const Filters = (props) => {
     return (
         <>
-        <FilterByName handleFilterName={props.handleFilterName} FilterByName={props.FilterByName}/>
+        <FilterByName handleFilterName={props.handleFilterName} filterByName={props.filterByName}/>
         <FilterBySpecie handleFilterSpecie = {props.handleFilterSpecie} filterBySpecie={props.filterBySpecie}/>
         </>
     );

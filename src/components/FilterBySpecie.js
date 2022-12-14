@@ -3,8 +3,12 @@ const FilterBySpecie = (props)=>{
         props.handleFilterSpecie(event.target.value);
     };
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <select className='input_name' onChange={handleChange} value={props.filterBySpecie}>
               <option disabled>Seleccione una especie</option>
               <option value='all'>Todos</option>
