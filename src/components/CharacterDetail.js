@@ -7,6 +7,7 @@ function CharacterDetail (props) {
             <h2 className='name_detail'>{props.character.name}</h2>
             <p className='specie_detail'>{props.character.specie}</p>
             <p className='status_detail'>{props.character.status}</p>
+            <p className='status_detail'>{props.character.origin}</p>
             <p className='status_detail'>{`${props.character.episodes} Episodes`}</p>
         </div>
         <img className='image_detail' src={props.character.img} alt={props.character.name}/>
