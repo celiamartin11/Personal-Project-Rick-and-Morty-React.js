@@ -11,7 +11,9 @@ const CharacterList = ({ characters, filterByName }) => {
     )
     } else{
         return(
-            <p className="no_character">No hay ningún personaje que coincida con el texto {filterByName}</p>
+            <section className="apart">
+                <p className="apart_character">¡¡¡¡ No hay ningún personaje que coincida con el texto {filterByName} !!!!</p>
+            </section>
         )
     }
 };
