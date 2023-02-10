@@ -26,6 +26,6 @@ A continuación encontrarás una lista de los personajes de la serie. Les acompa
 
 - Continuamos en el filtro de nombres para detallar que, en el caso de que introduzcas un carácter que no existe, recibirás un mensaje de error para avisarte.
 
-![Video CV (1)](https://user-images.githubusercontent.com/113979188/218082733-1f988ce9-04ab-436d-a488-7fa323ab0c04.gif)
+![Video CV (2)](https://user-images.githubusercontent.com/113979188/218083393-90d17546-5689-49aa-8aa5-4456ad2c006a.gif)
 
 - La información escrita y seleccionada por el ususario quedará grabada en el Almacenamiento Local de tu dispositivo para que puedas volver a tu búsqueda anterior siempre que quieras sin perder la información.
